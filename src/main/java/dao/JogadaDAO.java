@@ -7,7 +7,7 @@ import util.JPAUtil;
 
 public class JogadaDAO {
 
-	public static void save(Jogada jogada) {
+	public static void salvar(Jogada jogada) {
 		EntityManager em = JPAUtil.criarEntityManager();
 		em.getTransaction().begin();
 		em.persist(jogada);
@@ -15,7 +15,7 @@ public class JogadaDAO {
 		em.close();
 	}
 	
-	public static void update(Jogada jogada) {
+	public static void atualizar(Jogada jogada) {
 		EntityManager em = JPAUtil.criarEntityManager();
 		em.getTransaction().begin();
 		em.merge(jogada);
@@ -24,7 +24,7 @@ public class JogadaDAO {
 	}
 	
 
-	public static void delete(Jogada jogada) {
+	public static void deletar(Jogada jogada) {
 		EntityManager em = JPAUtil.criarEntityManager();
 		em.getTransaction().begin();
 		jogada = em.find(Jogada.class, jogada.getId());
@@ -34,7 +34,7 @@ public class JogadaDAO {
 	}
 	
 
-	public static List<Jogada> listAll() {
+	public static List<Jogada> listarTodos() {
 		EntityManager em = JPAUtil.criarEntityManager();
 		Query q = em.createQuery("select j from Jogada j");
 		List<Jogada> lista = q.getResultList();

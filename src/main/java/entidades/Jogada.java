@@ -1,5 +1,6 @@
 package entidades;
 
+import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.Random;
 
@@ -22,7 +23,7 @@ public class Jogada {
 	private String jogada1;
 	private String jogada2;
 	private String resultado;
-	@Temporal(TemporalType.DATE)
+	@Temporal(TemporalType.TIMESTAMP)
 	private Date data;
 	
 	public void verificarResultado() {
@@ -74,6 +75,7 @@ public class Jogada {
 	public void setResultado(String resultado) {
 		this.resultado = resultado;
 	}
+	
 	public Date getData() {
 		return data;
 	}
