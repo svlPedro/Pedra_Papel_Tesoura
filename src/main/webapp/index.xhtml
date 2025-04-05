@@ -6,22 +6,27 @@
 	  xmlns:h="http://xmlns.jcp.org/jsf/html"
 	  xmlns:p="http://primefaces.org/ui"
 	  xmlns:f="http://xmlns.jcp.org/jsf/core">
-	  <h:head><title>Minigame</title></h:head>
+	  <h:head>
+	  <title>Minigame</title>
+	  <h:outputStylesheet library="css" name="style.css" />
+	  </h:head>
 	<h:body>
-		<h:form id="formulario">
-			<p:messages id="messages" closable="true">
-	            <p:autoUpdate/>
-	        </p:messages>
-			<p:panelGrid columns="2">
-				<p:outputLabel value="Nome do primeiro Jogador: "/>
-				<p:inputText value="#{jogadaBean.jogada.jogador1}" required="true" label="Jogador 1" requiredMessage="O campo é Obrigatório"/>
+		 <div class="painel">
+			<h:form id="formulario">
+				<p:messages id="messages" closable="true">
+	            	<p:autoUpdate/>
+	        	</p:messages>
+				<p:panelGrid columns="2">
+					<p:outputLabel value="Nome do primeiro Jogador: "/>
+					<p:inputText value="#{jogadaBean.jogada.jogador1}" required="true" label="Jogador 1" requiredMessage="O campo é Obrigatório"/>
 				
-				<p:outputLabel value="Nome do segundo Jogador: "/>
-				<p:inputText value="#{jogadaBean.jogada.jogador2}" required="true" label="Jogador 2" requiredMessage="O campo é Obrigatório"/>
+					<p:outputLabel value="Nome do segundo Jogador: "/>
+					<p:inputText value="#{jogadaBean.jogada.jogador2}" required="true" label="Jogador 2" requiredMessage="O campo é Obrigatório"/>
 				
-				<p:commandButton value="Salvar" action="#{jogadaBean.salvar()}" update="formulario"/>
-				<p:commandButton value="Consultar Histórico" action="listagem" validate="false" process="@this"/>							
-			</p:panelGrid>		
-		</h:form>
+					<p:commandButton value="Salvar" action="#{jogadaBean.salvar()}" update="formulario"/>
+					<p:commandButton value="Consultar Histórico" action="listagem" validate="false" process="@this"/>							
+				</p:panelGrid>		
+			</h:form>
+		</div>
 	</h:body>	
 </html>
