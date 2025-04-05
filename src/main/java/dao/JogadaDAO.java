@@ -14,15 +14,6 @@ public class JogadaDAO {
 		em.getTransaction().commit();
 		em.close();
 	}
-	
-	public static void atualizar(Jogada jogada) {
-		EntityManager em = JPAUtil.criarEntityManager();
-		em.getTransaction().begin();
-		em.merge(jogada);
-		em.getTransaction().commit();
-		em.close();
-	}
-	
 
 	public static void deletar(Jogada jogada) {
 		EntityManager em = JPAUtil.criarEntityManager();
@@ -40,6 +31,5 @@ public class JogadaDAO {
 		List<Jogada> lista = q.getResultList();
 		em.close();
 		return lista;
-	}
-	
+	}	
 }

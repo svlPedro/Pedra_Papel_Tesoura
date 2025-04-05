@@ -1,9 +1,11 @@
 package entidades;
 
-import java.time.LocalDateTime;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Random;
 
+import javax.faces.application.FacesMessage;
+import javax.faces.context.FacesContext;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -49,6 +51,11 @@ public class Jogada {
 	     Random rd = new Random();
 	     jogada1 = opcoes[rd.nextInt(opcoes.length)]; 
 	     jogada2 = opcoes[rd.nextInt(opcoes.length)]; 
+	}
+	
+	public String getDataFormatada() {
+		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm");
+		return sdf.format(data);
 	}
 	
 	public Integer getId() {
