@@ -26,6 +26,16 @@ public class JogadaBean {
 		jogada = new Jogada();
 		return null;
 	}
+	
+	public void salvarEdicao(org.primefaces.event.RowEditEvent<Jogada> event) {
+	    Jogada jogadaEditada = event.getObject();
+	    JogadaDAO.salvar(jogadaEditada);
+	    FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Jogada atualizada com sucesso!"));
+	}
+
+	public void cancelarEdicao(org.primefaces.event.RowEditEvent<Jogada> event) {
+	    FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Edição cancelada."));
+	}
 		
 	public String deletar() {
 		lista.remove(jogadaSelecionada);

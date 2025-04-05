@@ -10,7 +10,7 @@ public class JogadaDAO {
 	public static void salvar(Jogada jogada) {
 		EntityManager em = JPAUtil.criarEntityManager();
 		em.getTransaction().begin();
-		em.persist(jogada);
+		em.merge(jogada);
 		em.getTransaction().commit();
 		em.close();
 	}
